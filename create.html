@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Management</title>
+    <link rel="stylesheet" href="./css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/lib/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="./css/lib/select2.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./images/CM(fav-logo).png">   
+</head>
+<body>
+    <!-- header -->
+   
+    <section>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./images/logo(CM).png" alt="" width="140" height="24"
+                        class="d-inline-block align-text-top">
+                </a>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                <ul class="navbar-nav" id="sidemenu">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Role</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Department</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Logout</a>
+                    </li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()" id="closeIcon-menu"></i>
+                </ul>
+              
+            </div>
+        </nav>
+    </section>
+    <!-- body section -->
+    <section>
+        <div class="main-content">
+            <h3 class="mb-3">Create User</h3>
+            <form class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label  class="form-label">User Name
+                    </label>
+                    <input type="text" class="form-control" id="" placeholder="Enter your user name" required>
+                    <div class="invalid-feedback">
+                        Please enter your user name
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Display Name
+                    </label>
+                    <input type="text" class="form-control" id="" placeholder="Enter your display name" required>
+                    <div class="invalid-feedback">
+                        Please enter your display name
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Email</span>
+                    </label>
+                    <input type="email" class="form-control" id="emailInput"
+                        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" id="" placeholder="@gmail.com" required>
+                    <div class="invalid-feedback">
+                        Please enter your email
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Date of Birth</label>
+                    <input type="text" class="form-control" pattern="\d{2}/\d{2}/\d{4}" id=""
+                        title="Enter date in dd/mm/yyyy format"
+                        oninput="this.value = this.value.replace(/[^0-9\/]/g, '')" data-provide="datepicker"
+                        placeholder="dd/mm/yyyy" required>
+                    <div class="invalid-feedback">
+                        Please enter your date of brith
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Role</label>
+                    <select class="form-select select2-role" required>
+                        <option value=""></option>
+                        <option value="1">System Admin</option>
+                        <option value="2">Project Manager</option>
+                        <option value="3">Software Engineer</option>
+                        <option value="3">HR Specialist</option>
+                        <option value="3">UX Designer</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Choose your role
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Department</label>
+                    <select class="form-select select2-department" required>
+                        <option value=""></option>
+                        <option value="1">IT</option>
+                        <option value="2">Operations</option>
+                        <option value="3">Engineer</option>
+                        <option value="3">Human Resources</option>
+                        <option value="3">Design</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Choose your department
+                    </div>
+                </div>
+                <div class="pt-3 text-end">
+                    <a class="btn btn-cancel" href="index.html">Cancel</a>
+                    <button class="btn btn-primary" type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+    <!-- footer section -->
+    <section>
+        <footer class="footer">
+            <div class="container text-center">
+                <p class="mb-0">
+                    Copyright &copy; 2025 All rights reserved | This template is made with <span><i
+                            class="fa-solid fa-heart"></i></span> by <span>Kham</span>
+                </p>
+            </div>
+        </footer>
+    </section>
+   <script src="./js/lib/jquery.min.js"></script>
+  <script src="./js/lib/bootstrap.min.js"></script>
+  <script src="./js/lib/bootstrap-datepicker.min.js"></script>
+  <script src="./js/lib/all.min.js"></script>
+  <script src="./js/lib/select2.min.js"></script>
+  <script src="./js/lib/datatables.min.js"></script>
+  <script src="./js/script.js"></script>
+  
+</body>
+
+</html>
