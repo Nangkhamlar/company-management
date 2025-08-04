@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Management</title>
+    <link rel="stylesheet" href="./css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/lib/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="./css/lib/select2.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./images/CM(fav-logo).png">
+</head>
+
+<body>
+    <section>
+        <!-- header -->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./images/logo(CM).png" alt="" width="140" height="24"
+                        class="d-inline-block align-text-top">
+                </a>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                <ul class="navbar-nav" id="sidemenu">
+                    <i class="fa-solid fa-xmark" onclick="closemenu()" id="closeIcon-menu"></i>
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="role.html">Role</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Department</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Logout</a>
+                    </li>
+                   
+                </ul>
+
+            </div>
+        </nav>
+    </section>
+    <section>
+        <!-- body  -->
+        <div class="content-wrap">
+            <div class="main-content">
+                <h3 class="mb-3">Create Role</h3>
+
+                <form class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label">Role ID</label>
+                        <input type="text" class="form-control" id="roleId" required >
+                        <div class="invalid-feedback">
+                            Please enter your role id
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Role Name
+                        </label>
+                        <input type="text" class="form-control" id="roleName" placeholder="Enter your role" required>
+                        <div class="invalid-feedback">
+                            Please enter your role name
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea type="text" class="form-control" id="description" rows="3" placeholder="Enter your  description"
+                            required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter your description
+                        </div>
+                    </div>
+                    <div class="pt-3 text-end">
+                        <a class="btn btn-cancel" href="role.html">Cancel</a>
+                        <button class="btn btn-primary" type="submit">Create</button>
+
+                    </div>
+
+                </form>
+            </div>
+            <!-- footer  -->
+            <footer class="footer">
+                <div class="container text-center">
+                    <p class="mb-0">
+                        Copyright &copy; 2025 All rights reserved | This template is made with <span><i
+                                class="fa-solid fa-heart"></i></span> by <span>Kham</span>
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </section>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/bootstrap.min.js"></script>
+    <script src="./js/lib/bootstrap-datepicker.min.js"></script>
+    <script src="./js/lib/all.min.js"></script>
+    <script src="./js/lib/select2.min.js"></script>
+    <script src="./js/lib/datatables.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

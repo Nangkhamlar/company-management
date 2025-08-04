@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Management</title>
+    <link rel="stylesheet" href="./css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/lib/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="./css/lib/select2.min.css">
+    <link rel="stylesheet" href="./css/lib/datatables.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./images/CM(fav-logo).png">
+</head>
+
+<body>
+    <!-- header -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo(CM).png" alt="" width="140" height="24" class="d-inline-block align-text-top">
+            </a>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            <ul class="navbar-nav" id="sidemenu">
+                <i class="fa-solid fa-xmark" onclick="closemenu()" id="closeIcon-menu"></i>
+                <li class="nav-item">
+                    <a class="nav-link " href="index.html">User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active " href="role.html">Role</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Department</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Logout</a>
+                </li>
+              
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="content-wrap">
+        <!-- body -->
+        <div class="main-content">
+            <div class="d-flex justify-content-between align-center mb-3">
+                <h3 class="mb-3">Role Management</h3>
+                <a href="role-create.html" class="btn btn-primary w-auto"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="20" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                    </svg>Create Role</a>
+            </div>
+            <div class="">
+                <table id="roleTable" class="display">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Role Id</th>
+                            <th>Role Name</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>SYS-001</td>
+                            <td>System Admin</td>
+                            <td>Supports users and enforces system security and performance.</td>
+                            <td>
+                                <div>
+                                    <a href="role-edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                                            class="fa-regular fa-trash-can"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>PM-002</td>
+                            <td>Project Manager</td>
+                            <td>Oversees planning, execution, and delivery of projects.</td>
+                            <td>
+                                <div>
+                                    <a href="role-edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                                            class="fa-regular fa-trash-can"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>SE-003</td>
+                            <td>Software Engineer</td>
+                            <td>Designs, develops, tests, and maintains software applications.</td>
+                            <td>
+                                <div>
+                                    <a href="role-edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                                            class="fa-regular fa-trash-can"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>HR-004</td>
+                            <td>HR Specialist</td>
+                            <td>Supports HR policies and organizational goals.</td>
+                            <td>
+                                <div>
+                                    <a href="role-edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                                            class="fa-regular fa-trash-can"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>UX-005</td>
+                            <td>UX Designer</td>
+                            <td>Designs user-friendly interfaces and experiences based on user needs and behavior.</td>
+                            <td>
+                                <div>
+                                    <a href="role-edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                                            class="fa-regular fa-trash-can"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <!-- footer-->
+        <footer class="footer">
+            <div class="container text-center">
+                <p class="mb-0">
+                    Copyright &copy; 2025 All rights reserved | This template is made with <span><i
+                            class="fa-solid fa-heart"></i></span> by <span>Kham</span>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header mb-3">
+                    <h5 class="modal-title">Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body mb-3">
+                    <p>Are you sure you want to delete?</p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer mb-3">
+                    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+                        Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/bootstrap.min.js"></script>
+    <script src="./js/lib/bootstrap-datepicker.min.js"></script>
+    <script src="./js/lib/all.min.js"></script>
+    <script src="./js/lib/select2.min.js"></script>
+    <script src="./js/lib/datatables.min.js"></script>
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>

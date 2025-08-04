@@ -13,172 +13,292 @@
 </head>
 <body>
   <!-- header -->
-  <section>
-    <nav class="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="./images/logo(CM).png" alt="" width="140" height="24" class="d-inline-block align-text-top">
-        </a>
-        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        <ul class="navbar-nav" id="sidemenu">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">User</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Role</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Department</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Logout</a>
-          </li>
-          <i class="fa-solid fa-xmark" onclick="closemenu()" id="closeIcon-menu"></i>
-        </ul>
+   <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./images/logo(CM).png" alt="" width="140" height="24"
+                        class="d-inline-block align-text-top">
+                </a>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                <ul class="navbar-nav" id="sidemenu">
+                    <i class="fa-solid fa-xmark" onclick="closemenu()" id="closeIcon-menu"></i>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="role.html">Role</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Department</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Logout</a>
+                    </li>
+                   
+                </ul>
 
-      </div>
-    </nav>
-  </section>
-  <!-- body section -->
-  <section>
-    <div class="main-content">
-      <div class="d-flex justify-content-between align-center mb-3">
-        <h3 class="mb-3" >User Management</h3>
-        <a href="create.html" class="btn btn-primary w-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-            height="20" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
-          </svg>Create User</a>
-      </div>
-      <div class="">
-        <table id="userTable" class="display">
-          <thead>
-            <tr>
-              <th class="text-start">#</th>
-              <th>User Name</th>
-              <th>Display Name</th>
-              <th>Email</th>
-              <th>Date of Birth</th>
-              <th>Role</th>
-              <th>Department</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="text-start">1</td>
-              <td>John Doe</td>
-              <td>doe</td>
-              <td>doe@gmail.com</td>
-              <td>13/12/1990</td>
-              <td>Systme Admin</td>
-              <td>IT</td>
-              <td>
-                <div class="">
-                  <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                  <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="text-start">2</td>
-              <td>Alice Smith</td>
-              <td>smith</td>
-              <td>smith@gmail.com</td>
-              <td>30/5/1988</td>
-              <td>Project Manager</td>
-              <td>Operations</td>
-              <td>
-                <div class="">
-                  <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                  <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="text-start">3</td>
-              <td>Mark Johnson</td>
-              <td>johnson</td>
-              <td>johnson@gmail.com</td>
-              <td>5/5/1995</td>
-              <td>Software Enginner</td>
-              <td>Enginner</td>
-               <td>
-                <div class="">
-                  <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                  <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></a>
-                </div>
-              </td>
+            </div>
+        </nav>
+    <div class="content-wrap">
+      <!-- body -->
+      <div class="main-content">
+        <div class="d-flex justify-content-between align-center mb-3">
+          <h3 class="mb-3">User Management</h3>
+          <a href="create.html" class="btn btn-primary w-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+              height="20" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+            </svg>Create User</a>
+        </div>
+        <div class="">
+          <table id="userTable" class="display">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>User Name</th>
+                <th>Display Name</th>
+                <th>Number</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Role</th>
+                <th>Department</th>
+                <th>Full Time</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>doe</td>
+                <td>09787781735</td>
+                <td>doe@gmail.com</td>
+                <td>13/12/1990</td>
+                <td>Male</td>
+                <td>Systme Admin</td>
+                <td>IT</td>
+                <td>Full time</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Alice Smith</td>
+                <td>smith</td>
+                <td>09787761435</td>
+                <td>smith@gmail.com</td>
+                <td>30/5/1988</td>
+                <td>Female</td>
+                <td>Project Manager</td>
+                <td>Operations</td>
+                <td>-</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Mark Johnson</td>
+                <td>johnson</td>
+                <td>09787761705</td>
+                <td>johnson@gmail.com</td>
+                <td>5/5/1995</td>
+                <td>Male</td>
+                <td>Software Enginner</td>
+                <td>Enginner</td>
+                <td>-</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
 
-            </tr>
-            <tr>
-              <td class="text-start">4</td>
-              <td>Christine Lee</td>
-              <td>lee</td>
-              <td>christine@gmail.com</td>
-              <td>19/7/1998</td>
-              <td>HR Specialist</td>
-              <td>Human Resources</td>
-              <td>
-                <div class="">
-                  <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                  <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="text-start">5</td>
-              <td>Lisa Williams</td>
-              <td>williams</td>
-              <td>williams@gmail.com</td>
-              <td>29/3/2000</td>
-              <td>UX Deisgner</td>
-              <td>Design</td>
-              <td>
-                <div class="">
-                  <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                  <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-regular fa-trash-can"></i></a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Christine Lee</td>
+                <td>lee</td>
+                <td>09787765735</td>
+                <td>christine@gmail.com</td>
 
+                <td>19/7/1998</td>
+                <td>Female</td>
+                <td>HR Specialist</td>
+                <td>Human Resources</td>
+                <td>Full time</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Lisa Williams</td>
+                <td>williams</td>
+                <td>09787561735</td>
+                <td>williams@gmail.com</td>
+
+                <td>29/3/2000</td>
+                <td>Female</td>
+                <td>UX Deisgner</td>
+                <td>Design</td>
+                <td>Full time</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td>John Doe</td>
+                <td>doe</td>
+                <td>09787781735</td>
+                <td>doe@gmail.com</td>
+                <td>13/12/1990</td>
+                <td>Male</td>
+                <td>Systme Admin</td>
+                <td>IT</td>
+                <td>Full time</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Alice Smith</td>
+                <td>smith</td>
+                <td>09787761435</td>
+                <td>smith@gmail.com</td>
+
+                <td>30/5/1988</td>
+                <td>Female</td>
+                <td>Project Manager</td>
+                <td>Operations</td>
+                <td>-</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Mark Johnson</td>
+                <td>johnson</td>
+                <td>09787761705</td>
+                <td>johnson@gmail.com</td>
+                <td>5/5/1995</td>
+                <td>Male</td>
+                <td>Software Enginner</td>
+                <td>Enginner</td>
+                <td>-</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Christine Lee</td>
+                <td>lee</td>
+                <td>09787765735</td>
+                <td>christine@gmail.com</td>
+                <td>19/7/1998</td>
+                <td>Female</td>
+                <td>HR Specialist</td>
+                <td>Human Resources</td>
+                <td>Full time</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Lisa Williams</td>
+                <td>williams</td>
+                <td>09787561735</td>
+                <td>williams@gmail.com</td>
+                <td>29/3/2000</td>
+                <td>Female</td>
+                <td>UX Deisgner</td>
+                <td>Design</td>
+                <td>Full time</td>
+                <td>
+                  <div>
+                    <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                        class="fa-regular fa-trash-can"></i></a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+      <!-- footer-->
+      <footer class="footer">
+        <div class="container text-center">
+          <p class="mb-0">
+            Copyright &copy; 2025 All rights reserved | This template is made with <span><i
+                class="fa-solid fa-heart"></i></span> by <span>Kham</span>
+          </p>
+        </div>
+      </footer>
     </div>
-    <!-- Delete Confirmation Modal -->
-    <div class="modal" id="deleteModal" tabindex="-1">
-      <div class="modal-dialog  modal-dialog-centered">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header mb-3">
-            <h5 class="modal-title">Confirmation</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <!-- Modal body -->
-          <div class="modal-body mb-3">
-            <p>Are you sure you want to delete?</p>
-          </div>
-          <!-- Modal footer -->
-          <div class="modal-footer mb-3">
-            <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary">
-              Ok</button>
-          </div>
+  <!-- Delete Confirmation Modal -->
+  <div class="modal" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog  modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header mb-3">
+          <h5 class="modal-title">Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body mb-3">
+          <p>Are you sure you want to delete?</p>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer mb-3">
+          <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+            Ok</button>
         </div>
       </div>
     </div>
-  </section>
-  <!-- footer section -->
-  <section>
-    <footer class="footer">
-      <div class="container text-center">
-        <p class="mb-0">
-          Copyright &copy; 2025 All rights reserved | This template is made with <span><i
-              class="fa-solid fa-heart"></i></span> by <span>Kham</span>
-        </p>
-      </div>
-    </footer>
+  </div>
   </section>
   <script src="./js/lib/jquery.min.js"></script>
   <script src="./js/lib/bootstrap.min.js"></script>
@@ -187,10 +307,7 @@
   <script src="./js/lib/select2.min.js"></script>
   <script src="./js/lib/datatables.min.js"></script>
   <script src="./js/script.js"></script>
-  <script>
-    
   
-
-  </script>
 </body>
+
 </html>

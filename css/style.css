@@ -6,28 +6,30 @@
     font-size: 16px;
     font-family: "Roboto Condensed", sans-serif;
 }
-
 :root {
     --color-primary: #007BFF;
     --color-border: #ced4da;
+    --color-secondary: #ced4da;
     --color-body: #F6F6F6;
     --color-box-shadow: #888888;
     --color-footer: #222222;
     --color-error-msg: #DF2C3E;
     --color-edit: #F7C40F;
 }
-
 body {
     background-color: var(--color-body);
-    height: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-y: auto;
 }
-
 .container-fluid {
     padding-left: 0px;
     padding-right: 0px;
+}
+
+.hide {
+    display: none;
 }
 
 /* for css */
@@ -38,7 +40,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     background-color: var(--color-primary);
 }
 
@@ -46,47 +47,43 @@ body {
     width: 446px;
     box-shadow: 3px 5px 18px var(--color-box-shadow);
     padding: 40px 40px 40px 40px;
-    margin: auto;
     background-color: #fff;
     border-radius: 6px;
 }
 
-.login-card p a {
+.login-card  a {
     color: #000;
     font-weight: 300;
 }
 
-.login-card p a:hover {
+.login-card  a:hover {
     color: var(--color-primary);
     text-decoration: none;
 }
 
 /* main-content */
+.content-wrap {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
 .main-content {
-    position: fixed;
-    top: 56px;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    overflow-y: auto;
-    background: #fff;
     margin: 40px;
     padding: 30px;
     background-color: #fff;
     border-radius: 6px;
     box-shadow: 3px 5px 18px var(--color-box-shadow);
-   
 }
 
-.main-content h3{
+.main-content h3 {
     font-size: 18px;
     font-weight: bold;
 }
 
-
-
 /* footer */
 .footer {
+    width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -97,16 +94,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding:0px 40px;
+    padding: 0px 40px;
 
 }
+
 .footer span {
     color: var(--color-primary);
 }
 
-
 /* modal box */
-
 .modal-content {
     border: none;
 }
@@ -146,17 +142,17 @@ body {
 /* edit and delete icon */
 .fa-pen-to-square {
     color: var(--color-edit);
-    font-weight: bole;
+    font-weight: 400;
 }
 
 .fa-trash-can {
     color: var(--color-error-msg);
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .fa-pen-to-square:hover,
 .fa-trash-can:hover {
-    font-weight: 400;
+    font-weight: bold;
 }
 
 /* Boostrap */
@@ -181,17 +177,18 @@ body {
 .navbar-nav .nav-link {
     font-weight: bold;
     padding: 20px;
-}
-
-.nav-link,
-.nav-link:focus {
     color: #000;
 }
+
+
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--color-primary);
+    font-weight: bold;
+    text-decoration: none;
 }
+
 
 .fa-bars {
     display: none;
@@ -206,8 +203,6 @@ body {
 @media only screen and (max-width: 780px) {
     .fa-bars {
         display: block;
-        cursor: pointer;
-        z-index: 1000;
     }
 
     .navbar-nav {
@@ -219,8 +214,7 @@ body {
         right: -150px;
         width: 150px;
         height: 100vh;
-        padding-top: 50px;
-        z-index: 999;
+        padding-top: 10px;
         transition: right 0.3s ease;
     }
 
@@ -235,10 +229,9 @@ body {
 
 
     #closeIcon-menu {
-        position: absolute;
-        top: 15px;
-        left: 65px;
+        display: block;
         font-size: 25px;
+        font-weight: bold;
         color: #fff;
         cursor: pointer;
     }
@@ -247,11 +240,39 @@ body {
         display: flex;
         justify-content: space-between;
     }
-
-    
 }
 
 /* form */
+.form-check-input:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+.form-check-input.is-valid,
+.was-validated .form-check-input:valid {
+    border-color: var(--color-border);
+}
+
+.form-check-input.is-valid:checked,
+.was-validated .form-check-input:valid:checked {
+    background-color: var(--color-primary);
+}
+
+.form-check-input.is-valid:focus,
+.was-validated .form-check-input:valid:focus {
+    box-shadow: none;
+}
+
+.form-check-input.is-valid~.form-check-label,
+.was-validated .form-check-input:valid~.form-check-label {
+    color: #000;
+    border: none;
+}
+
 .form-control:focus,
 .form-select:focus,
 .btn:focus {
@@ -298,10 +319,6 @@ body {
     box-shadow: none;
 }
 
-/* .form-control:focus{
-    box-shadow: none;
-} */
-
 .btn {
     box-shadow: 2px 4px 3px var(--color-box-shadow);
     width: 114px;
@@ -344,16 +361,13 @@ body {
 
 /* Hide the default arrow */
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
-   
-      top:60%;
-      left:0%;
-     
-    
-} 
+    top: 60%;
+    left: 0%;
+}
 
-.select2-container--default .select2-selection--single .select2-selection__arrow{
-    height:28px;
-    right:-5px;
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 28px;
+    right: -10px;
 }
 
 
@@ -373,11 +387,9 @@ body {
     border: 1px solid var(--color-primary);
 }
 
+
+
 /* datepicker boostrap library*/
-/* .datepicker table tr td.day:hover {
-    background: var(--color-border);
-    cursor: pointer;
-} */
 
 td.active.day {
     background: var(--color-primary) !important;
@@ -442,6 +454,7 @@ th.dow {
     width: 35px;
 }
 
+
 /* Table*/
 div.dt-container .dt-paging .dt-paging-button.current {
     background-color: var(--color-primary);
@@ -460,37 +473,49 @@ div.dt-container .dt-paging .dt-paging-button:hover {
     align-items: center;
     gap: 4px;
 }
-div.dt-container select.dt-input:focus,div.dt-container .dt-search input .active{
+
+div.dt-container select.dt-input:focus,
+div.dt-container .dt-search input .active {
     box-shadow: none;
     border-color: var(--color-primary);
 }
-div.dt-container select.dt-input .active{
+
+div.dt-container select.dt-input .active {
     box-shadow: none;
     border-color: var(--color-border);
 }
 
+
+
 /* select option  for datatable*/
+
+
 .dt_length select option:checked {
-  background-color:var( --color-primary);
-  color: #fff;
+    background-color: var(--color-primary);
+    color: #fff;
 }
 
-div.dt-container .dt-search input{
+div.dt-container .dt-search input {
     border: 1px solid var(--color-border);
 }
 
-[type=search] {
-    outline-offset:0px;
+div.dt-container .dt-input {
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
 }
-.dt-search input[type="search"]:focus{
+
+.dt-search input[type="search"]:focus {
     border-color: var(--color-primary);
     outline: none;
 }
 
-.dt-search input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  appearance: none;
-  display: none;
+table.dataTable th.dt-type-numeric div.dt-column-header {
+    flex-direction: row;
 }
 
-   
+table.dataTable th.dt-type-numeric,
+table.dataTable th.dt-type-date,
+table.dataTable td.dt-type-numeric,
+table.dataTable td.dt-type-date {
+    text-align: left;
+}
